@@ -5,6 +5,7 @@ from tkinter import ttk
 from PIL import ImageTk,Image
 import random
 from tkinter import messagebox
+import os, shutil
 
 plot= Tk()
 plot.title("graph")
@@ -72,9 +73,23 @@ def addEdge(graph,list1):
     img1= ImageTk.PhotoImage(Image.open('bin/'+str(a)+".png"))
     list_img.append(img1)
 
-def show(): #print graph
+def show(): #display graph
     label= Label(outframe,image= img1)
     label.grid(row=0, column=0,padx=20,pady=10)
+
+def exit(): #the generated graphs are stored in the bin folder
+           #this function will clear the bin folder whenever you exit the window
+    folder ='C:/Users/RadheKrishna/Desktop/Data Structure Visualizer/graph and tree/bin'
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to clear bin %s. Reason: %s' % (file_path, e))
+    plot.quit()
 
 
 #upper frame
@@ -117,7 +132,7 @@ structure.grid(row=0, column=0,padx=20, sticky=W)
 structMenu=ttk.Combobox(bottom_frame, textvariable=selected_alg, values=["Directed Graph", "Undirected Graph","Tree"])
 structMenu.grid(row=0,column=1,padx=5,pady=5,sticky=W)
 #exit
-button_exit=Button(bottom_frame, text = "  Exit  ", bg="#323232",fg="white",command=plot.quit)
+button_exit=Button(bottom_frame, text = "  Exit  ", bg="#323232",fg="white",command=exit)
 button_exit.grid(row=1,column=0,padx=50,ipady=2,pady=10,ipadx=40,columnspan=2)
 
 
