@@ -119,10 +119,10 @@ def deque():
         listfront.append(txtfront)
 
 
-    popped=canvas.create_text(700,300, text="The dequeued element was: "+str(listele[lenele]), fill="white")
+    popped=canvas.create_text(700,300, text="The dequeued element was: "+str(listele[0]), fill="white")
 
 
-    listele.pop()
+    listele.pop(0)
 
     print(listele)
     # print(listrear)
