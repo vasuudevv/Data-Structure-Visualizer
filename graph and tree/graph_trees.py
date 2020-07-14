@@ -50,8 +50,6 @@ def addnodes():   #add nodes in the graph
         response3=messagebox.showwarning("Warning","  Node limit: 13  ")        #showinfo---showerror---showwarning---askquestion---askokcancel
 
 
-
-
 def addEdge(graph,list1):
 
     global a
