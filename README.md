@@ -7,3 +7,22 @@ Build using Python and Tkinter and Graphviz GUI,the data structure it covers are
 undirected) and algorithms like bubble sort, merge sort and quick sort.
 
 You'll need to install "pydot" and "graphviz"(only through conda, not pip !!) in order to run the 'graph_trees.py' file.
+
+Stack:
+![](images/stack.PNG)
+
+Queue:
+![](images/queue.PNG)
+
+Graph:
+
+![](images/graph.PNG)
+
+Tree:
+
+![](images/tree.PNG)
+
+Sorting:
+
+![](images/sort.PNG)
+
